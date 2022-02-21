@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <div id="menu">
+    <img id="icon" src="img/budget.PNG">
+  </div>
+  <form class="center" action="/verification" method="POST">
+    <div class="container">
+        <h1>Log In</h1>
+        <% if(successfulRegister) { %>
+          <p id="login-paragraph">You have been successfuly registered. Please login now</p>
+        <% } else { %>
+          <p id="login-paragraph">Dont have an account yet? <a class="links" href="/register">Register</a></p>
+        <% } %>  
+        <% if(again) { %>
+          <p id="login-paragraph"> Username or password is incorrect. Please try again </p>
+        <% } %>    
+        <label for="user">Username</label>
+        <input type="text" name="user" id="user" placeholder="Enter Username" required>
+        <label for="pass">Password<a class="links" href="#">Forgot password</a></label>
+        <input type="password" name="pass" id="pass" placeholder="Enter Password" required> 
+        <button class="logbutton" role="button" type="submit">Login</button>
+        <input type="checkbox" name="remember" id="remember" value="Remember me">
+        <label for="remember">Remember me</label>
+        
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+  <body>
+    <div id="menu">
+      <img id="icon" src="img/budget.PNG">
+    </div>
+    <form class="center" action="/newuser" method="POST">
+      <div class="container">
+          <h1>Registration</h1>
+          <label for="user">Username</label>
+          <input class="register" type="text" name="user" id="user" placeholder="Enter Username" required>
+          <label for="pass">Password</label>
+          <input class="register" type="password" name="pass" id="pass" placeholder="Enter Password" required> 
+          <label for="rpass">Repeat Password</label>
+          <input class="register" type="password" name="rpass" id="rpass" placeholder="Re-Enter Password" required> 
+          <% if(notMatchingPassword) { %>
+            <p id="login-paragraph">Password is not matching</p>
+          <% } %>
+          <button class="logbutton" type="submit">Register</button>
+          <button class="logbutton" ><a href="/">Log In</a></button>
+      </div>
+    </form>
+  </body>
+</html>
